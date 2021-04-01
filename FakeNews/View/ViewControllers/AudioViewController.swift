@@ -32,10 +32,10 @@ final class AudioViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
-        view.addSubviews(audioTitle, dismissButton)
-        dismissButton.addTarget(self, action: #selector(dismissButtonTapped), for: .touchUpInside)
+        setupUI()
+        setupSubviews()
         setupConstraints()
+        dismissButton.addTarget(self, action: #selector(dismissButtonTapped), for: .touchUpInside)
     }
 
 
@@ -43,7 +43,11 @@ final class AudioViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 
-    private func setupViews() {
+    private func setupSubviews() {
+        view.addSubviews(audioTitle, dismissButton)
+    }
+
+    private func setupUI() {
         view.backgroundColor = .white
     }
 

@@ -30,9 +30,9 @@ final class ArticleCell: UITableViewCell {
 
     public func configure(withTitle title: String, withText text: String) {
         setupViews()
+        setupConstraints()
         articleTitle.text = title
         articleShortDescription.text = text
-        setupConstraints()
     }
 
     private func setupViews() {

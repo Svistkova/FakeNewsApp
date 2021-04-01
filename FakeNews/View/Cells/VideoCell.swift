@@ -29,9 +29,9 @@ final class VideoCell: UITableViewCell {
 
     public func configure(withTitle title: String) {
         setupViews()
+        setupConstraints()
         videoTitle.text = title
         fakeVideoView.image = ImageKey.Cells.videoCellImage.image
-        setupConstraints()
     }
 
     func setupViews() {

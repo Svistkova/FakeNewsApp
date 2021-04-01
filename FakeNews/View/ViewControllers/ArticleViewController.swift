@@ -32,10 +32,10 @@ final class ArticleViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
-        view.addSubviews(articleTitle, dismissButton)
-        dismissButton.addTarget(self, action: #selector(dismissButtonTapped), for: .touchUpInside)
+        setupUI()
+        setupSubviews()
         setupConstraints()
+        dismissButton.addTarget(self, action: #selector(dismissButtonTapped), for: .touchUpInside)
     }
     
 
@@ -43,7 +43,11 @@ final class ArticleViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 
-    private func setupViews() {
+    private func setupSubviews() {
+        view.addSubviews(articleTitle, dismissButton)
+    }
+
+    private func setupUI() {
         view.backgroundColor = .white
     }
 

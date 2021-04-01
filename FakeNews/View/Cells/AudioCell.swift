@@ -36,10 +36,10 @@ final class AudioCell: UITableViewCell {
 
     public func configure(withTitle title: String, withText text: String, withDuration duration: String) {
         setupViews()
+        setupConstraints()
         audioTitle.text = title
         audioSubtitle.text = text
         interviewDurationTitle.text = "Интервью, " + duration + " мин."
-        setupConstraints()
     }
 
     private func setupViews() {

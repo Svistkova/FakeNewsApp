@@ -37,22 +37,24 @@ final class GeneralViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupViews()
-        view.addSubviews(tableView, generalTitle)
-        setupConstraints()
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 300
+        configure()
         if let localData = newsManager.readLocalFile(forName: "data") {
             cells = newsManager.parse(jsonData: localData)
         }
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    private func configure() {
+        setupSubviews()
+        setupUI()
+        setupConstraints()
     }
 
-    private func setupViews() {
+    private func setupUI() {
         view.backgroundColor = Palette.gray.color
+    }
+
+    private func setupSubviews() {
+        view.addSubviews(tableView, generalTitle)
     }
 
     private func setupConstraints() {
