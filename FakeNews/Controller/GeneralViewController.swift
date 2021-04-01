@@ -16,6 +16,7 @@ final class GeneralViewController: UIViewController {
             tableView.reloadData()
         }
     }
+    private var dataSource = GeneralTableViewDataSource()
 
     private lazy var tableView: UITableView = {
         let table = UITableView()
@@ -24,7 +25,6 @@ final class GeneralViewController: UIViewController {
         table.register(AudioCell.self, forCellReuseIdentifier: AudioCell.identifier)
         table.backgroundColor = Palette.gray.color
         table.delegate = self
-        table.dataSource = self
         return table
     }()
 
@@ -41,6 +41,8 @@ final class GeneralViewController: UIViewController {
         if let localData = newsManager.readLocalFile(forName: "data") {
             cells = newsManager.parse(jsonData: localData)
         }
+        dataSource.cells = cells
+        tableView.dataSource = dataSource
     }
 
     private func configure() {
@@ -72,41 +74,7 @@ final class GeneralViewController: UIViewController {
 }
 
 
-extension GeneralViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cells.count
-    }
-
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell: UITableViewCell
-        let type = cells[indexPath.row]
-
-        switch type {
-
-        case .article(let article):
-            let articleCell = tableView.dequeueReusableCell(withIdentifier: ArticleCell.identifier, for: indexPath) as! ArticleCell
-            articleCell.article = article
-            articleCell.accessoryType = .disclosureIndicator
-            articleCell.configure(withTitle: article.title, withText: article.shortDescription)
-            cell = articleCell
-
-        case .video(let video):
-            let videoCell = tableView.dequeueReusableCell(withIdentifier: VideoCell.identifier, for: indexPath) as! VideoCell
-            videoCell.video = video
-            videoCell.accessoryType = .disclosureIndicator
-            videoCell.configure(withTitle: video.title)
-            cell = videoCell
-
-        case .audio(let audio):
-            let audioCell = tableView.dequeueReusableCell(withIdentifier: AudioCell.identifier, for: indexPath) as! AudioCell
-            audioCell.accessoryType = .disclosureIndicator
-            audioCell.audio = audio
-            audioCell.configure(withTitle: audio.title, withText: audio.person, withDuration: audio.duration)
-            cell = audioCell
-        }
-        return cell
-    }
+extension GeneralViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)

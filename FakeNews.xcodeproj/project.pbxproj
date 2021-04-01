@@ -29,6 +29,7 @@
 		795A688226135DA80040D2EA /* AudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795A688126135DA80040D2EA /* AudioViewController.swift */; };
 		795A6888261527030040D2EA /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795A6887261527030040D2EA /* Palette.swift */; };
 		795A688B261527A70040D2EA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 795A688A261527A70040D2EA /* Colors.xcassets */; };
+		795A68942615E8F20040D2EA /* GeneralTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 795A68932615E8F20040D2EA /* GeneralTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		795A688126135DA80040D2EA /* AudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioViewController.swift; sourceTree = "<group>"; };
 		795A6887261527030040D2EA /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		795A688A261527A70040D2EA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		795A68932615E8F20040D2EA /* GeneralTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralTableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				795A682C2611EA6F0040D2EA /* GeneralViewController.swift */,
+				795A68932615E8F20040D2EA /* GeneralTableViewDataSource.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				795A682D2611EA6F0040D2EA /* GeneralViewController.swift in Sources */,
 				795A687026130F7A0040D2EA /* ImageKey.swift in Sources */,
 				795A686A261306FE0040D2EA /* VideoCell.swift in Sources */,
+				795A68942615E8F20040D2EA /* GeneralTableViewDataSource.swift in Sources */,
 				795A68292611EA6F0040D2EA /* AppDelegate.swift in Sources */,
 				795A686D261307180040D2EA /* AudioCell.swift in Sources */,
 				795A6888261527030040D2EA /* Palette.swift in Sources */,
