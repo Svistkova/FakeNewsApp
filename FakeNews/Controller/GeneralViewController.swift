@@ -41,6 +41,7 @@ final class GeneralViewController: UIViewController {
         view.addSubviews(tableView, generalTitle)
         setupConstraints()
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 300
         if let localData = newsManager.readLocalFile(forName: "data") {
             cells = newsManager.parse(jsonData: localData)
         }
@@ -99,7 +100,7 @@ extension GeneralViewController: UITableViewDelegate, UITableViewDataSource {
             let audioCell = tableView.dequeueReusableCell(withIdentifier: AudioCell.identifier, for: indexPath) as! AudioCell
             audioCell.accessoryType = .disclosureIndicator
             audioCell.audio = audio
-            audioCell.configure(withTitle: audio.title, withText: audio.person)
+            audioCell.configure(withTitle: audio.title, withText: audio.person, withDuration: audio.duration)
             cell = audioCell
         }
         return cell

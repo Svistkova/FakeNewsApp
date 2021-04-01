@@ -16,6 +16,7 @@ final class VideoViewController: UIViewController {
         title.textAlignment = .center
         title.textAlignment = .center
         title.font = title.font.withSize(30)
+        title.numberOfLines = 0
         return title
     }()
     

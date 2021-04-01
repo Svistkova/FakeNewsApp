@@ -14,6 +14,7 @@ final class ArticleViewController: UIViewController {
         let title = UILabel()
         title.textAlignment = .center
         title.font = title.font.withSize(30)
+        title.numberOfLines = 0
         return title
 
     }()

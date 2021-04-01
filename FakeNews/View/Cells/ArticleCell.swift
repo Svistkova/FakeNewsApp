@@ -16,12 +16,14 @@ final class ArticleCell: UITableViewCell {
     private lazy var articleTitle: UILabel = {
         let label = UILabel()
         label.font = label.font.withSize(20)
+        label.numberOfLines = 0
         return label
     }()
 
     private lazy var articleShortDescription: UILabel = {
         let label = UILabel()
         label.font = label.font.withSize(15)
+        label.numberOfLines = 0
         return label
     }()
 
@@ -40,16 +42,15 @@ final class ArticleCell: UITableViewCell {
 
     private func setupConstraints() {
         articleTitle.snp.makeConstraints { (make) in
-            make.top.leading.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(-10)
-//            make.height.equalTo(30)
+            make.top.equalToSuperview().offset(10)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-30)
         }
 
         articleShortDescription.snp.makeConstraints { (make) in
-            make.leading.equalToSuperview().offset(10)
-            make.trailing.bottom.equalToSuperview().offset(-10)
-            make.top.equalTo(articleTitle.snp.bottom).offset(5)
-//            make.height.equalTo(30)
+            make.leading.bottom.equalToSuperview().inset(20)
+            make.trailing.equalToSuperview().offset(-30)
+            make.top.equalTo(articleTitle.snp.bottom).offset(10)
         }
     }
 }

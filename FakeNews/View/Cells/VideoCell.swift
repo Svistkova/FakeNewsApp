@@ -16,6 +16,7 @@ final class VideoCell: UITableViewCell {
     private lazy var videoTitle: UILabel = {
         let label = UILabel()
         label.font = label.font.withSize(20)
+        label.numberOfLines = 0
         return label
     }()
 
@@ -40,14 +41,14 @@ final class VideoCell: UITableViewCell {
 
     private func setupConstraints() {
         videoTitle.snp.makeConstraints { (make) in
-            make.top.leading.equalToSuperview().offset(10)
-            make.trailing.equalToSuperview().offset(-10)
-            make.height.equalTo(30)
+            make.top.equalToSuperview().offset(10)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-30)
         }
 
         fakeVideoView.snp.makeConstraints { (make) in
             make.leading.trailing.bottom.equalToSuperview().inset(10)
-            make.top.equalTo(videoTitle.snp.bottom).offset(5)
+            make.top.equalTo(videoTitle.snp.bottom).offset(10)
             make.height.equalTo(200)
         }
     }
