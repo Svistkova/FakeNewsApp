@@ -1,0 +1,13 @@
+/* 
+  Localizable.strings
+  FakeNews
+
+  Created by Marina Svistkova on 29.03.2021.
+  
+*/
+
+// GeneralViewController
+"general_title_text" = "Фэйк Ньюз";
+
+//Single News ViewControllers
+"dismiss_button_title" = "Закрыть";
